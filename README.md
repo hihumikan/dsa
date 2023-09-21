@@ -1,28 +1,28 @@
-# rrc(RemoteLinkCat)
-
+# RRC (RemoteLinkCat)
 
 ## Abstract
-SSHプロトコルを使用してリモートサーバー上のファイルとディレクトリをローカルディレクトリに同期させ、同時に変更を指定したGitリポジトリに自動アップロードするユーティリティツールです。このツールは、ファイルのバックアップ、リモートサーバーとのファイルの同期、Gitリポジトリのバージョン管理など、多くのシナリオで使用できます。
+RRC is a utility tool that uses the SSH protocol to synchronize files and directories on a remote server to a local directory while automatically uploading changes to a specified Git repository. This tool can be used in various scenarios, including file backups, remote server synchronization, and version control for Git repositories.
 
-## Feature
-SSH接続: GitSyncはSSHプロトコルを使用してリモートサーバーに接続し、安全な通信を確立します。
+## Features
+**SSH Connectivity:** rrc establishes a secure connection to remote servers using the SSH protocol.
 
-リモートとローカルの同期: リモートサーバー上のファイルとディレクトリをローカルディレクトリに同期させることができます。リモートからローカルへのコピー、ローカルからリモートへのアップロード、双方向の同期などがサポートされています。
+**Remote and Local Synchronization:** It allows you to synchronize files and directories on a remote server with a local directory. It supports copying from remote to local, uploading from local to remote, and bidirectional synchronization.
 
-Gitリポジトリへの自動アップロード: 変更があると自動的にGitリポジトリにコミットおよびプッシュするオプションを提供します。これにより、ファイルの変更履歴が確実に記録されます。
+**Automatic Upload to Git Repositories:** It offers an option to automatically commit and push changes to a Git repository when modifications occur, ensuring a reliable history of file changes.
 
-ファイルフィルタリング: ファイルの同期とGitアップロードを制御するためのファイルフィルタリングオプションを提供します。特定のファイルタイプや拡張子、ファイルサイズなどを指定できます。
+**File Filtering:** Provides file filtering options to control file synchronization and Git uploads. You can specify particular file types, extensions, file sizes, and more.
 
-スケジュールされた同期: ファイル同期とGitアップロードを定期的に実行するためのスケジュールオプションを提供し、自動化をサポートします。
+**Scheduled Synchronization:** Offers scheduling options to periodically execute file synchronization and Git uploads, supporting automation.
 
-セキュリティ: GitSyncはSSHを使用して通信し、データの暗号化とセキュリティを確保します。
+**Security:** rrc uses SSH for communication, ensuring data encryption and security.
 
-## FTPとの違い
+## Differences from FTP
 
-GitSyncとFTPは、異なる目的と使用ケースを持つ異なるツールおよびプロトコルです。
+rrc and FTP are different tools and protocols designed for different purposes and use cases.
 
-GitSyncは、主にバージョン管理と協力作業を支援するために設計されています。その主要な目的は、ソースコードやテキストファイルなどの変更を記録し、複数の開発者が協力してソフトウェアプロジェクトを管理することです。GitSyncはファイル同期のための主要なツールではなく、むしろGitリポジトリ内で変更をトラッキングし、バージョン管理を行います。セキュリティ面では、Gitはセキュリティを高めるためにSSHなどのセキュアなプロトコルを使用しますが、主にバージョン管理ツールとして設計されています。GitSyncは主にソフトウェア開発やコードのバージョン管理に適しています。
+rrc is primarily designed to assist version control and collaboration. Its main purpose is to record changes, such as source code or text files, and manage software projects with collaboration from multiple developers. GitSync is not primarily a file synchronization tool but rather a tool for tracking changes within Git repositories. While Git uses secure protocols like SSH to enhance security, it is primarily designed as a version control tool and is suitable for software development and code versioning.
 
-**FTP（File Transfer Protocol）**は、ファイル転送プロトコルであり、その主要な目的は異なるコンピュータ間でファイルの転送および共有を行うことです。特にWebサイトのファイルアップロードやダウンロードに広く使用されます。FTPは主にファイルの同期と転送に使用され、リモートサーバーからローカルコンピュータや逆の方向へファイルをコピーするためのプロトコルです。セキュリティの面では、元のFTPはセキュリティの脆弱性があるため、FTPSやSFTPなどのセキュアなバリエーションが存在し、セキュアな通信を提供します。FTPは主にファイルのアップロード、ダウンロード、バックアップ、Webホスティングなど、ファイルの転送と共有に適しています。
+**FTP (File Transfer Protocol)**, on the other hand, is a file transfer protocol with the main purpose of transferring and sharing files between different computers. It is widely used for tasks like uploading and downloading files for websites. FTP is primarily used for file synchronization and transfer, allowing you to copy files from remote servers to local computers or vice versa.
 
-要するに、GitSyncはバージョン管理と協力作業向けで、主にコードやテキストファイルに使用されます。一方、FTPはファイルの転送と同期向けで、ファイルの送受信やバックアップに使用されます。セキュリティを高めるためには、FTPSやSFTPを使用することが一般的です。
+In summary, rrc is geared towards version control and collaboration, primarily used for code and text files. FTP, on the other hand, is focused on file transfer and synchronization, commonly used for file transfer and backup purposes.
+
